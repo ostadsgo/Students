@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<section class="container menu-hr">
+		<div id="menu-hr">
+			<ul>
+				<li><a href="{{ url_for('add_event') }}">Add Events</a></li>
+				<li class="sp">||</li>
+				<li><a href="{{ url_for('my_events') }}">My Events</a></li>
+				<li class="sp">||</li>
+				<li><a href="{{ url_for('profile') }}">Add Profile</a></li>
+			</ul>
+		</div>
+	</section>
+	<section id="Content" class="content-table-mode">
+		<div class="container box">
+			<h1>Add Events</h1>
+			<div class="c">
+				<form method="post">
+					<div><input name="name" class="input" type="text" placeholder="Event Name"/></div>
+					<div><input name="date" class="input" type="date" placeholder="Date"/></div>
+					<div><input name="cat" class="input" type="text" placeholder="Categories"/></div>
+					<div><textarea name="desc" class="input" placeholder="Description"></textarea></div>
+					<div><input type="submit" value="Add"/></div>
+				</form>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<p>Friend4Event Copyright 2018-2019</p>
+	</footer>
+	{% endblock body %}

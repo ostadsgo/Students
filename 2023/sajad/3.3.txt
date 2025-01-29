@@ -1,0 +1,29 @@
+3.3 Analyse saisie (2pts)
+
+Ecrire une fonction analyse_input
+
+i à l'utilisateur va placer
+aui prend en paramètre une chaine de caractères décrivant le sens et la position où l'uti
+Son mot. La chaine saisie par utilisa
+
+teur à la forme suivante :
+
+© ler caractère : est 'H' pour horizontal, V pour vertical,
+
+* 2e caractère : est une lettre désignant la ligne, ;
+
+* 3e caractère ou 3e et 4e caractères : le numéro de colonne. II faut utiliser les deux fonctions précédemment décrites.
+
+La fonction rend un triplet (sens, lig,col) si la saisie utilisateur est correcte, où
+» sens est'H'ou'V
+
+* lig et col sont des entiers entre 0 et 14,
+
+La fonction rend un triplet vide () si la saisie est incorrecte,
+
+La fonction doit donc tester la correction de la saisie
+
+utilisateur. On ne teste pas ici si le mot sort de la grille, ni que le mot recouvre un autre
+mot déjà posé (testé dans une autre fonction),
+
+Tests Décommenter dans test.py la fonction module test.test_analyse_input().

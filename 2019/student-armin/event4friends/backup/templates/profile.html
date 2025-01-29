@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<section class="container menu-hr">
+	<div id="menu-hr">
+		<ul>
+			<li><a href="{{ url_for('add_event') }}">Add Events</a></li>
+			<li class="sp">||</li>
+			<li><a href="{{ url_for('my_events') }}">My Events</a></li>
+			<li class="sp">||</li>
+			<li><a href="{{ url_for('profile') }}">Add Profile</a></li>
+		</ul>
+	</div>
+</section>
+<section id="Content" class="content-table-mode">
+	<div class="container box">
+		<h1>My Profile</h1>
+		<div class="c">
+			<form method="post">
+				<div><input name="username" type="hidden" value={{current_user.username}}></div>
+				<!--old password  -->
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<div class="input-group-text">
+							<input type="checkbox" onclick="showOldPassword()">
+						</div>
+					</div>
+					<input type="password" class="form-control" placeholder="Old Password" id="password" name="old_password">
+				</div>
+				<!-- new passowrd -->
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<div class="input-group-text">
+							<input type="checkbox" onclick="showNewPassword()">
+						</div>
+					</div>
+					<input type="password" id="new_password" class="form-control" placeholder="New Password" name="new_password">
+				</div>
+				<!-- new password confirm -->
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<div class="input-group-text">
+							<input type="checkbox" onclick="showPassword2()">
+						</div>
+					</div>
+					<input type="password" id="password2" class="form-control" placeholder="New Password Confirm" name="new_password_confirm">
+				</div>
+				<div><input type="submit" value="Save" /></div>
+			</form>
+		</div>
+	</div>
+</section>
+<footer>
+	<p>Friend4Event Copyright 2018-2019</p>
+</footer>
+<script>
+	function showOldPassword() {
+		var x = document.getElementById("password");
+		if (x.type === "password") {
+			x.type = "text";
+		} else {
+			x.type = "password";
+		}
+	} 
+	function showNewPassword() {
+		var x = document.getElementById("new_password");
+		if (x.type === "password") {
+			x.type = "text";
+		} else {
+			x.type = "password";
+		}
+	} 
+	function showPassword2() {
+		var x = document.getElementById("password2");
+		if (x.type === "password") {
+			x.type = "text";
+		} else {
+			x.type = "password";
+		}
+	} 
+	
+	
+</script>
+{% endblock body %}

@@ -1,0 +1,79 @@
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+gopher:x:13:30:gopher:/var/gopher:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+usbmuxd:x:113:113:usbmuxd user:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/cache/rpcbind:/sbin/nologin
+hsqldb:x:96:96::/var/lib/hsqldb:/sbin/nologin
+rtkit:x:499:499:RealtimeKit:/proc:/sbin/nologin
+oprofile:x:16:16:Special user account to be used by OProfile:/home/oprofile:/sbin/nologin
+avahi-autoipd:x:170:170:Avahi IPv4LL Stack:/var/lib/avahi-autoipd:/sbin/nologin
+vcsa:x:69:69:virtual console memory owner:/dev:/sbin/nologin
+apache:x:48:48:Apache:/var/www:/sbin/nologin
+saslauth:x:498:76:Saslauthd user:/var/empty/saslauth:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+ntp:x:38:38::/etc/ntp:/sbin/nologin
+unbound:x:497:495:Unbound DNS resolver:/etc/unbound:/sbin/nologin
+haldaemon:x:68:68:HAL daemon:/:/sbin/nologin
+gdm:x:42:42::/var/lib/gdm:/sbin/nologin
+pulse:x:496:494:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
+webalizer:x:67:67:Webalizer:/var/www/usage:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+georg:nUn5DsTzI3SF6:500:500:g:/semfs/hem/georg:/bin/bash
+test:x:501:500::/semfs/hem/test:/bin/bash
+dhcpd:x:177:177:DHCP server:/:/sbin/nologin
+munin:x:495:491:Munin user:/var/lib/munin:/sbin/nologin
+hal10039:x:5000:500:Henrik.Alfredsson:/semfs/hem/hal10039:/bin/bash
+ama10340:x:5001:500:Andreas.Martinsson:/semfs/hem/ama10340:/bin/bash
+jbr10041:x:5002:500:Jonas.Bredberg:/semfs/hem/jbr10041:/bin/bash
+aka10287:sbNQPU2qVe8Lc:5003:500:Anders.Karlsson:/semfs/hem/aka10287:/bin/bash
+kma10414:x:5004:500:Kristian.Malbakken:/semfs/hem/kma10414:/bin/bash
+fla10272:x:5005:500:Felix.Larsson:/semfs/hem/fla10272:/bin/bash
+cajo8592:x:5006:500:Caroline.Jonsson:/semfs/hem/cajo8592:/bin/bash
+olsa8600:x:5007:500:Olle.Sandin:/semfs/hem/olsa8600:/bin/bash
+dne10297:x:5008:500:Daniel.Netz:/semfs/hem/dne10297:/bin/bash
+hzi10315:x:5009:500:Hanna.Wilhelmsson:/semfs/hem/hzi10315:/bin/bash
+mor10750:x:5010:500:Martin.Oergard:/semfs/hem/mor10750:/bin/bash
+gan11064:x:5011:500:Gustav.Andersson:/semfs/hem/gan11064:/bin/bash
+jha10510:x:5012:500:Joakim.Hagglund:/semfs/hem/jha10510:/bin/bash
+mha10279:rSGQTAYGGc29k:5013:500:Mattias.Haggarde:/semfs/hem/mha10279:/bin/bash
+esa11388:x:5014:500:Efe.Saglam:/semfs/hem/esa11388:/bin/bash
+uer10270:x:5015:500:Urban.Eriksson:/semfs/hem/uer10270:/bin/bash
+sba11521:x:5016:500:Salur.Basbug:/semfs/hem/sba11521:/bin/bash
+est11456:x:5017:500:Elin.Stenmark:/semfs/hem/est11456:/bin/bash
+aha10804:x:5018:500:Amir.Alizadeh:/semfs/hem/aha10804:/bin/bash
+ain10690:x:5019:500:Aron.Ingi.Ingvason:/semfs/hem/ain10690:/bin/bash
+cug11851:x:5020:500:Crystal.Ugarte:/semfs/hem/cug11851:/bin/bash
+fha11579:x:5021:500:Filippa.Hallbaeck:/semfs/hem/fha11579:/bin/bash
+aku12058:x:5022:500:Artjoms.Kuznecovs:/semfs/hem/aku12058:/bin/bash
+pbo10040:x:5023:500:Per.Bodforss:/semfs/hem/pbo10040:/bin/bash
+ewa12147:x:5024:500:Emelie.Wallenstein:/semfs/hem/ewa12147:/bin/bash
+mra12226:x:5025:500:Moeen.Rajput:/semfs/hem/mra12226:/bin/bash
+kwi12059:x:5026:500:Kim.Wiik:/semfs/hem/kwi12059:/bin/bash
+dta10781:x:5027:500:Daniel.Tanner:/semfs/hem/dta10781:/bin/bash
+pkr10291:x:5028:500:Per.Kron:/semfs/hem/pkr10291:/bin/bash
+dapi7957:x:5029:500:Daniele.Piva:/semfs/hem/dapi7957:/bin/bash
+bwa11507:x:5030:500:Bertil.Walden:/semfs/hem/bwa11507:/bin/bash
+ndha8005:x:5031:500:Daniel.Hansson:/semfs/hem/ndha8005:/bin/bash
+dri12404:x:5032:500:Daniel.Rickert:/semfs/hem/dri12404:/bin/bash
+72514453:x:5033:500:Caroline.Jonsson:/semfs/hem/72514453:/bin/bash
+72514154:x:5034:500:Andreas.Mattiasson:/semfs/hem/72514154:/bin/bash
+72514917:x:5035:500:Magnus.Stridh:/semfs/hem/72514917:/bin/bash
+72514861:x:5036:500:Mehrdad.Moridnejad:/semfs/hem/72514861:/bin/bash
+72514153:x:5037:500:Anton.Andersson:/semfs/hem/72514153:/bin/bash
+72514858:x:5038:500:Jakob.Ekermo:/semfs/hem/72514858:/bin/bash

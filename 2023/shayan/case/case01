@@ -1,0 +1,207 @@
+#!/bin/bash
+
+RED='\033[0;31m'
+NC='\033[0m'  # No Color
+
+items=(
+"${RED}ni${NC}     Network Info (Network information)"
+""
+"${RED}ua${NC}     User Add (Create a new user)"
+"${RED}ul${NC}     User List (List all login users)"
+"${RED}uv${NC}     User View (View user properties)"
+"${RED}um${NC}     User Modify (Modify user properties)"
+"${RED}ud${NC}     User Delete (Delete a login user)"
+""
+"${RED}ga${NC}     Group Add (Create a new group)"
+"${RED}gl${NC}     Group List (List all groups, not system groups)"
+"${RED}gv${NC}     Group View (List all users in a group)"
+"${RED}gm${NC}     Group Modify (Add/remove user to/from a group)"
+"${RED}gd${NC}     Group Delete (Delete a group, not system groups)"
+""
+
+"${RED}fa${NC}     Folder Add (Create a new folder)"
+"${RED}fl${NC}     Folder List (View content in a folder)"
+"${RED}fv${NC}     Folder View (View folder properties)"
+"${RED}fm${NC}     Folder Modify (Modify folder properties)"
+"${RED}fd${NC}     Folder Delete (Delete a folders)"
+""
+"${RED}ex${NC}     Exit"
+)
+function clear_and_print_header() {
+  clear;
+  echo "********************************"
+  echo "SYSTEM MANAGER (version 1.0.0)"
+  echo "--------------------------------"
+}
+
+while true;
+do
+    clear_and_print_header
+    # Print out the menu items.
+    for item in "${items[@]}"; do
+        echo -e "$item"
+    done
+    echo "--------------------------------"
+
+    read -rp  "Choice: " user_choice
+
+    # Network information
+    if [ "$user_choice" == "ni" ]; then
+        clear_and_print_header
+        computer_name=$(uname -n)
+        ip_addr=$(ip a | grep "inet " | sed -n '2p' | cut -c 10-20)
+        getway=$(ip route | awk '/default/ {print $3}')
+        up_interface=$(ip route | grep default | awk '{print $5}')
+        mac_addrs=$(ip link show | awk '/link\/ether/ {print $2}')
+        status=$(ip -o link show "$up_interface" | awk '{print $9}')
+        echo -e "${RED}Computer name:${NC} $computer_name"
+        echo -e "${RED}Interface:${NC} $up_interface"
+        echo -e "${RED}Ip Address:${NC} $ip_addr"
+        echo -e "${RED}Getway:${NC} $getway"
+        echo -e "${RED}MAC:${NC} $mac_addrs"
+        echo -e "${RED}Status:${NC} $status"
+
+    # User add
+    elif [ "$user_choice" == "ua" ]; then
+        clear_and_print_header
+        echo "Enter the user name: "
+        read -r username
+        sudo adduser "$username"
+        echo "User $username created successfully."
+
+    #User list
+    elif [ "$user_choice" == "ul" ]; then 
+        clear_and_print_header
+        who
+
+    #User view
+    elif [ "$user_choice" == "uv" ]; then 
+        clear_and_print_header
+        # User name
+        echo -e "${RED}User:${NC} $(id -un)"
+        # User password
+        echo -e "${RED}Password: ${NC} xx"
+        # User id
+        echo -e "${RED}User ID: ${NC} $(id -u)"
+        # Group id
+        echo -e "${RED}User ID: ${NC} $(id -g)"
+        # Full username
+        fullname=$(awk -F':' '/^username:/ {print $5}' /etc/passwd)
+        echo -e "${RED}Comment: ${NC} $fullname"
+        # User home directory
+        echo -e "${RED}Directory: ${NC}" ~
+        # Active shell
+        echo -e "${RED}Shell: ${NC} $SHELL" 
+        # Groups
+        echo -e "${RED}Groups: ${NC} $(groups | tr ' ' ', ') "
+
+        
+    # User modify
+    elif [ "$user_choice" == "um" ]; then
+        clear_and_print_header
+        read -rp "Enter target username: " username
+        read -rp "New username: " new_username
+        sudo usermod -l  "$new_username" "$username"
+        # Change home directory
+        read -rp "New home dirctory path: " home_path
+        sudo usermod -m -d "$home_path" "$username"
+
+
+    # User delete
+    elif [ "$user_choice" == "ud" ]; then
+        clear_and_print_header
+        echo "Enter the user name: "
+        read -r username
+        sudo userdel "$username"
+        echo "User $username deleted successfully."
+     
+    # Group add
+    elif [ "$user_choice" == "ga" ]; then
+       clear_and_print_header
+       echo "Enter the group name"
+       read -r group_name
+       sudo groupadd "$group_name"
+       echo "The group $group_name added successfully."
+
+    # Group list
+    elif [ "$user_choice" == "gl" ]; then 
+       clear_and_print_header
+       cut -d: -f1 /etc/group
+
+    #Group view
+    elif [ "$user_choice" == "gv" ]; then
+       clear_and_print_header
+        read -rp  "Enter group name: " group_name
+        # members "$group_name"
+        grep "$group_name" /etc/group 
+
+    # Group modify
+    elif [ "$user_choice" == "gm" ]; then
+        clear_and_print_header
+        # Add new user to a group
+        echo "Add user to a group."
+        read -rp "Username: " username
+        read -rp "Group name: " group_name
+        sudo usermod -aG "$group_name" "$username"
+        # Remove a user from a group
+        echo "Remove user from a group."
+        read -rp "Username: " username
+        read -rp "Group name: " group_name
+        sudo gpasswd -d "$username" "$group_name"
+
+
+    # Group delete
+    elif [ "$user_choice" == "gd" ]; then
+        clear_and_print_header
+        read -rp group_name  "Enter the group name: "
+        sudo groupdel "$group_name"
+        echo "Group $group_name deleted successfully."
+
+    ## ----- Folder -------
+    #Folder add
+    elif [ "$user_choice" == "fa" ]; then
+        clear_and_print_header
+        echo "Enter the folder name: "
+        read folder_name
+        mkdir "$folder_name"
+        echo "Folder '$folder_name' created successfully"
+
+    #Folder list
+    elif [ "$user_choice" == "fl" ]; then
+        clear_and_print_header
+        echo "Enter the folder name: "
+        read -r folder_name
+        ls "$folder_name"
+
+    # folder view
+    elif [ "$user_choice" == "fv" ]; then
+        clear_and_print_header
+        echo "Enter the folder name: "
+        read -r folder_name
+        stat "$folder_name"
+
+    #Folder modify
+    elif [ "$user_choice" == "fm" ]; then
+        clear_and_print_header
+        echo "Make a directory to be readonly"
+        read -rp "Enter directory path: " dir_path
+        # make directory to be readonly
+        chmod -w "$dir_path"
+
+    #Folder delete
+    elif [ "$user_choice" == "fd" ]; then
+        clear_and_print_header
+        echo "Enter the folder name: "
+        read -r folder_name
+        rm -r "$folder_name"
+        echo "Folder $folder_name deleted successfully."
+
+
+    # Exit
+    elif [ "$user_choice" == "ex" ]; then
+       break
+    else
+        echo "Error: Invalid choice."
+    fi
+    read -rp "Press enter to continue ..."
+done

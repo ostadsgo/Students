@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Personal Info{% endblock title%}
+{% block content%}
+    <h1>User Personal Inforamtion</h1>
+    <h3>Profile Inforamtion</h3>
+    <img src="{{user.profile.image.url}}" alt="{{ user.username }} Picture">
+    <p>First Name: {{ user.profile.first_name}}</p>
+    <p>Last Name: {{ user.profile.last_name}}</p>
+    <p>Mobile: {{ user.profile.mobile}}</p>
+    <p>Phone: {{ user.profile.phone}}</p>
+    <h3>Payment Inforamtion</h3>
+
+    {% for payment in payments %}
+        <h4>Date: {{ payment.date}}</h4>
+        <p>Hour: {{ payment.hour}}</p>
+        <p>Price: {{ payment.price}}</p>
+        <p>Price Per Hour: {{ payment.price_per_hour}}</p>
+        <p>Payment Type: {{ payment.payment_type}}</p>
+        <hr>
+    {% endfor %}
+
+
+{% endblock content%}

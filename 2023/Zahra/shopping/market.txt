@@ -1,0 +1,7 @@
+jam:60
+ chess:45
+ milk:30
+ butter:15
+ pasta:40
+ sauce:15
+ chocolate:50

@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+<section id="showcase">
+	<div class="container">
+		<h1>Let's Share our Events</h1>
+		<p>this is sample text for the friend4event website</p>
+	</div>
+</section>
+{% if not current_user.is_authenticated %}
+<section id="login">
+	<div class="container">
+		<h1 id="login_form">If you are already a member please login here</h1>
+		<form method="POST" action="{{ url_for('login') }}">
+			<input type="text" name="email" placeholder="Enter your email address" required>
+			<input type="password" name="password" placeholder="Enter your password" required>
+			<button type="submit" class="button_1">login</button>
+		</form>
+	</div>
+</section>
+{% endif %}
+<section id="boxes">
+	<div class="container">
+		<div class="box">
+			<img src="{{ url_for('static', filename='img/register.png') }}">
+			<h3><a class="highlight" href="{{ url_for('register') }}">Join Now!</a></h3>
+			<p>To become a member of Friend4Event please click on <b>join now</b> </p>
+		</div>
+		<div class="box">
+			<img src="{{ url_for('static', filename='img/friends.png') }}">
+			<h3>Find New Friends</h3>
+			<p>Find new friends in Friend4Event and become more sociable! </p>
+		</div>
+		<div class="box">
+			<img src="{{ url_for('static', filename='img/enjoy.png') }}">
+			<h3>Enjoy!</h3>
+			<p>Enjoy your time with new events and new friends . Adventures are waiting there for you!</p>
+		</div>
+	</div>
+</section>
+<section id="Content" class="content-table-mode">
+	<h1 id="events">Lates't Runnig Events</h1>
+	<div class="container table">
+		<div class="c">
+			<table class="header">
+				<tr>
+					<th class="c-name">Event Name</th>
+					<th class="c-cat">Category</th>
+					<th class="c-date">Date</th>
+					<th class="c-btn"></th>
+				</tr>
+			</table>
+			<table class="body">
+				{% for event in events %}
+				<tr>
+					<td class="c-name">{{ event.name}}</td>
+					<td class="c-cat">{{ event.event_type }}</td>
+					<td class="c-date">{{ event.date }}</td>
+					{% if current_user.is_authenticated %}
+					<td class="c-btn">
+						<a href="{{ url_for('join_event', user_id=current_user.user_id, event_id=event.event_id)}}" class="btn"><span>Join</span></a>
+					</td>
+					{% else %}
+					<td class="c-btn">
+						<a href="{{ url_for('register')}}#reg_form" class="btn"><span>Join</span></a>
+					</td>
+					{% endif %}
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+</section>
+
+<footer>
+	<p>Friend4Event Copyright 2018-2019</p>
+</footer>
+{% endblock body %}

@@ -1,0 +1,15 @@
+3.2 Convertir colonne (1 pts)
+| paramètres une chaine représentant un nomère et qu rend un er corresponde
+es
+
+respond à le colonne 1, 15 correspond à la colonne
+
+Ecrire une fonction convertér_coïonne qui prenden
+gril, La chain 1 correspond à la ligne 0,2 co
+
+numéro de colonne dans la
+
+on considère que le pramètr « es toujours vale ei est inutile del véciier
+sonvertix_otonne()
+
+Tests Décommenter dans vost.pz la fonction noole_test.tes

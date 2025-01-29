@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<section id="showcase">
+	<div class="container">
+		<h1>Let's Share our Events</h1>
+		<p>this is sample text for the friend4event website</p>
+	</div>
+</section>
+<section id="register">
+	<div class="container">
+		<h1 id="reg_form">Please enter your information to get registered</h1>
+		<form method="POST" action="">
+			<input type="text" name="username" placeholder="Enter a username" required><br><br>
+			<input type="email" name="email" placeholder="Enter your email address" required><br><br>
+			<input type="password" name="password" placeholder="Enter your password" required><br><br>
+			<input type="password" name="password_conf" placeholder="Confirm your password" required><br><br>
+			<button type="submit" class="button_1">Register</button>
+		</form>
+	</div>
+</section>
+<footer>
+	<p>Friend4Event Copyright 2018-2019</p>
+</footer>
+{% endblock body %}
+<p>somthing</p>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>322</width>
+    <height>492</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+	background-color: white;
+	margin: 20px;
+}
+
+#user_logo {
+	border:none;
+	border-radius: 50px;
+}
+
+QLineEdit {
+	border: 1px solid #b71c1c;
+	height: 20px;
+	padding-left: 30px;
+}
+QLineEdit:hover {
+	border: 2px solid #ef5350;
+}
+
+
+QPushButton {
+	border: none;
+}
+#register_button {
+	border: none;
+	background-color: #b71c1c;
+	height: 20px;
+	padding: 5px;
+	color: #fafafa;
+}
+
+#register_button:hover {
+	background-color: #d32f2f;
+}</string>
+  </property>
+  <widget class="QPushButton" name="user_logo">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>31</y>
+     <width>141</width>
+     <height>128</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="resources/res.qrc">
+     <normaloff>:/icons/user(1).png</normaloff>:/icons/user(1).png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>128</width>
+     <height>128</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="register_button">
+   <property name="geometry">
+    <rect>
+     <x>52</x>
+     <y>360</y>
+     <width>231</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Register</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="username">
+   <property name="geometry">
+    <rect>
+     <x>51</x>
+     <y>205</y>
+     <width>231</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string>Username ...</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="user_icon">
+   <property name="geometry">
+    <rect>
+     <x>58</x>
+     <y>213</y>
+     <width>21</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="resources/res.qrc">
+     <normaloff>:/icons/user-black.png</normaloff>:/icons/user-black.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pass_icon">
+   <property name="geometry">
+    <rect>
+     <x>57</x>
+     <y>262</y>
+     <width>20</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="resources/res.qrc">
+     <normaloff>:/icons/pass-black.png</normaloff>:/icons/pass-black.png</iconset>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="password">
+   <property name="geometry">
+    <rect>
+     <x>51</x>
+     <y>254</y>
+     <width>231</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string>Password ...</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="password_confirm">
+   <property name="geometry">
+    <rect>
+     <x>52</x>
+     <y>304</y>
+     <width>231</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="placeholderText">
+    <string>Password ...</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pass_icon_3">
+   <property name="geometry">
+    <rect>
+     <x>59</x>
+     <y>312</y>
+     <width>20</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="resources/res.qrc">
+     <normaloff>:/icons/pass-black.png</normaloff>:/icons/pass-black.png</iconset>
+   </property>
+  </widget>
+  <widget class="QLabel" name="error_message">
+   <property name="geometry">
+    <rect>
+     <x>42</x>
+     <y>420</y>
+     <width>241</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>user_logo</zorder>
+  <zorder>register_button</zorder>
+  <zorder>username</zorder>
+  <zorder>password</zorder>
+  <zorder>password_confirm</zorder>
+  <zorder>error_message</zorder>
+  <zorder>pass_icon</zorder>
+  <zorder>pass_icon_3</zorder>
+  <zorder>user_icon</zorder>
+ </widget>
+ <resources>
+  <include location="resources/res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

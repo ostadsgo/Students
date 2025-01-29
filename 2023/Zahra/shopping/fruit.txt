@@ -1,0 +1,7 @@
+apple:55
+ orange:70
+ banana:100
+ grape:60
+ watermelon:80
+ peach:30
+ cucumber:25

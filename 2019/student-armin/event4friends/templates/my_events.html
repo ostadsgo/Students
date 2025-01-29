@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<section class="container menu-hr">
+		<div id="menu-hr">
+			<ul>
+				<li><a href="{{ url_for('add_event') }}">Add Events</a></li>
+				<li class="sp">||</li>
+				<li><a href="{{ url_for('my_events') }}">My Events</a></li>
+				<li class="sp">||</li>
+				<li><a href="{{ url_for('profile') }}">Add Profile</a></li>
+			</ul>
+		</div>
+	</section>
+	<section id="Content" class="content-table-mode">
+		<h1>My Events</h1>
+		<div class="container table">
+			<div class="c">
+				<table class="header">
+					<tr>
+						<th class="c-name">Event Name</th>
+						<th class="c-member">Members</th>
+						<th class="c-cat">Category</th>
+						<th class="c-date">Date</th>
+						<th class="c-btn"></th>
+					</tr>
+				</table>
+				<table class="body">
+					{% for event in events %}
+						<tr>
+							<td class="c-name">{{ event.name }}</td>
+							<td class="c-member">
+								{% for attendee in attendees[event.event_id] %}
+									<span>{{ attendee }}</span>
+								{% endfor %}
+							</td>
+							<td class="c-cat">{{ event.event_type }}</td>
+							<td class="c-date">{{ event.date }}</td>
+							<td class="c-btn">
+								<a href="{{url_for('delete_event', event_id=event.event_id)}}" class="red-btn"><span>Del</span></a>
+							</td>
+						</tr>
+					{% endfor %}
+				</table>
+				
+			</div>
+		</div>
+	</section>
+	<footer>
+		<p>Friend4Event Copyright 2018-2019</p>
+	</footer>
+	{% endblock body %}
